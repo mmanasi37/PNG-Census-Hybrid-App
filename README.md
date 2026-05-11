@@ -2,6 +2,8 @@
 
 A Flutter-based offline-first field data collection app for the Papua New Guinea national census. Built for Android and iOS, designed to work reliably in low-connectivity rural environments.
 
+> **WIA** means *village* in the Yangoru tok ples (local language of the Yangoru-Saussia District, East Sepik Province).
+
 ---
 
 ## Overview
@@ -126,4 +128,4 @@ A `409 Conflict` response to `POST` should return the server's version of the re
 
 ## License
 
-Government of Papua New Guinea — Women in Agriculture (WIA) Census Programme. Not for public redistribution.
+Government of Papua New Guinea — WIA (village) Census Programme. Not for public redistribution.
