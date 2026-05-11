@@ -1,0 +1,603 @@
+{
+  "id": "png_census_2025",
+  "version": "1.0.0",
+  "title": {
+    "en": "PNG National Population & Housing Census 2025",
+    "tpi": "PNG Nesen Kaun bilong Manmeri na Haus 2025"
+  },
+  "sections": [
+    {
+      "id": "A",
+      "title": {
+        "en": "Section A: Location & Household Identification",
+        "tpi": "Seksion A: Ples na Namba bilong Haus"
+      },
+      "questions": [
+        {
+          "id": "A01",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Province", "tpi": "Provins" },
+          "options": [
+            { "value": "NCD",  "label": { "en": "National Capital District", "tpi": "Nesen Kepitel Distrik" } },
+            { "value": "CENTRAL", "label": { "en": "Central", "tpi": "Sentrol" } },
+            { "value": "GULF", "label": { "en": "Gulf", "tpi": "Gulf" } },
+            { "value": "WESTERN", "label": { "en": "Western", "tpi": "Westen" } },
+            { "value": "MILNE_BAY", "label": { "en": "Milne Bay", "tpi": "Miln Be" } },
+            { "value": "ORO", "label": { "en": "Oro (Northern)", "tpi": "Oro (Noten)" } },
+            { "value": "SOUTHERN_HIGHLANDS", "label": { "en": "Southern Highlands", "tpi": "Sauten Heilans" } },
+            { "value": "HELA", "label": { "en": "Hela", "tpi": "Hela" } },
+            { "value": "ENGA", "label": { "en": "Enga", "tpi": "Enga" } },
+            { "value": "WESTERN_HIGHLANDS", "label": { "en": "Western Highlands", "tpi": "Westen Heilans" } },
+            { "value": "JIWAKA", "label": { "en": "Jiwaka", "tpi": "Jiwaka" } },
+            { "value": "SIMBU", "label": { "en": "Simbu (Chimbu)", "tpi": "Simbu (Simbu)" } },
+            { "value": "EASTERN_HIGHLANDS", "label": { "en": "Eastern Highlands", "tpi": "Isten Heilans" } },
+            { "value": "MOROBE", "label": { "en": "Morobe", "tpi": "Morob" } },
+            { "value": "MADANG", "label": { "en": "Madang", "tpi": "Madang" } },
+            { "value": "EAST_SEPIK", "label": { "en": "East Sepik", "tpi": "Ist Sepik" } },
+            { "value": "WEST_SEPIK", "label": { "en": "West Sepik (Sandaun)", "tpi": "West Sepik (Sandaun)" } },
+            { "value": "MANUS", "label": { "en": "Manus", "tpi": "Manus" } },
+            { "value": "EAST_NEW_BRITAIN", "label": { "en": "East New Britain", "tpi": "Ist Niu Briten" } },
+            { "value": "WEST_NEW_BRITAIN", "label": { "en": "West New Britain", "tpi": "West Niu Briten" } },
+            { "value": "NEW_IRELAND", "label": { "en": "New Ireland", "tpi": "Niu Ailan" } },
+            { "value": "AROB", "label": { "en": "Autonomous Region of Bougainville", "tpi": "Bogenvil" } }
+          ]
+        },
+        {
+          "id": "A02",
+          "type": "text",
+          "required": true,
+          "text": { "en": "District", "tpi": "Distrik" },
+          "hint": { "en": "Enter district name", "tpi": "Raitim nem bilong distrik" }
+        },
+        {
+          "id": "A03",
+          "type": "text",
+          "required": true,
+          "text": { "en": "Local Level Government (LLG)", "tpi": "Lokel Lefel Gavman (LLG)" }
+        },
+        {
+          "id": "A04",
+          "type": "number",
+          "required": true,
+          "text": { "en": "Ward Number", "tpi": "Namba bilong Wod" },
+          "validations": [
+            { "type": "min", "value": 1 },
+            { "type": "max", "value": 99 }
+          ]
+        },
+        {
+          "id": "A05",
+          "type": "text",
+          "required": true,
+          "text": { "en": "Census Unit Name", "tpi": "Nem bilong Sensas Yunet" }
+        },
+        {
+          "id": "A06",
+          "type": "text",
+          "required": true,
+          "text": { "en": "Village / Town Name", "tpi": "Nem bilong Ples o Taun" }
+        },
+        {
+          "id": "A07",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Type of Locality", "tpi": "Wanem kain ples i stap" },
+          "options": [
+            { "value": "urban", "label": { "en": "Urban", "tpi": "Taun/Bris" } },
+            { "value": "rural", "label": { "en": "Rural", "tpi": "Ples/Busk" } }
+          ]
+        },
+        {
+          "id": "A08",
+          "type": "text",
+          "required": true,
+          "text": { "en": "Household Number", "tpi": "Namba bilong Haus" },
+          "hint": { "en": "As assigned on the census map", "tpi": "Olsem i stap long sensas mep" }
+        },
+        {
+          "id": "A09",
+          "type": "text",
+          "required": true,
+          "text": { "en": "Full Name of Head of Household", "tpi": "Ful Nem bilong Het bilong Haus" }
+        },
+        {
+          "id": "A10",
+          "type": "gps",
+          "required": false,
+          "text": { "en": "GPS Location of Dwelling", "tpi": "Ples GPS bilong Haus" }
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": {
+        "en": "Section B: Household Members (Person Questionnaire)",
+        "tpi": "Seksion B: Ol Manmeri bilong Haus"
+      },
+      "questions": [
+        {
+          "id": "B_roster",
+          "type": "repeatGroup",
+          "text": { "en": "Household Member", "tpi": "Manmeri bilong Haus" },
+          "hint": { "en": "Add each person who usually lives in this household", "tpi": "Putim olgeta manmeri i save stap long dispela haus" },
+          "repeatGroupQuestions": [
+            {
+              "id": "B01",
+              "type": "text",
+              "required": true,
+              "text": { "en": "Full Name", "tpi": "Ful Nem" }
+            },
+            {
+              "id": "B02",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Relationship to Head of Household", "tpi": "Wanem samting yu stap long het bilong haus" },
+              "options": [
+                { "value": "head", "label": { "en": "Head", "tpi": "Het bilong haus" } },
+                { "value": "spouse", "label": { "en": "Spouse / Partner", "tpi": "Wantain / Paten" } },
+                { "value": "son_daughter", "label": { "en": "Son / Daughter", "tpi": "Pikinini Man / Meri" } },
+                { "value": "son_daughter_in_law", "label": { "en": "Son / Daughter-in-law", "tpi": "Pikinini Lo" } },
+                { "value": "grandchild", "label": { "en": "Grandchild", "tpi": "Tumbuna Pikinini" } },
+                { "value": "parent", "label": { "en": "Parent", "tpi": "Papa o Mama" } },
+                { "value": "sibling", "label": { "en": "Brother / Sister", "tpi": "Brata / Susa" } },
+                { "value": "other_relative", "label": { "en": "Other Relative", "tpi": "Narapela Wantok" } },
+                { "value": "non_relative", "label": { "en": "Non-Relative", "tpi": "Stranger / Ges" } }
+              ]
+            },
+            {
+              "id": "B03",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Sex", "tpi": "Seks (Man o Meri)" },
+              "options": [
+                { "value": "male", "label": { "en": "Male", "tpi": "Man" } },
+                { "value": "female", "label": { "en": "Female", "tpi": "Meri" } }
+              ]
+            },
+            {
+              "id": "B04",
+              "type": "number",
+              "required": true,
+              "text": { "en": "Age (completed years)", "tpi": "Hamas yia yu gat pinis" },
+              "validations": [
+                { "type": "min", "value": 0 },
+                { "type": "max", "value": 120 }
+              ]
+            },
+            {
+              "id": "B05",
+              "type": "date",
+              "required": false,
+              "text": { "en": "Date of Birth (if known)", "tpi": "De bilong bon bilong yu (sapos yu save)" }
+            },
+            {
+              "id": "B06",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Marital Status", "tpi": "Wanem kain marit" },
+              "showWhen": [
+                { "questionId": "B04", "operator": "gte", "value": 12 }
+              ],
+              "options": [
+                { "value": "never_married", "label": { "en": "Never Married", "tpi": "Marit i no kamap yet" } },
+                { "value": "married_registered", "label": { "en": "Married (Registered)", "tpi": "Marit (Pes i sain)" } },
+                { "value": "married_customary", "label": { "en": "Married (Customary)", "tpi": "Marit (Kastom)" } },
+                { "value": "separated", "label": { "en": "Separated", "tpi": "Brukim marit" } },
+                { "value": "divorced", "label": { "en": "Divorced", "tpi": "Divois" } },
+                { "value": "widowed", "label": { "en": "Widowed", "tpi": "Wido / Widos" } }
+              ]
+            },
+            {
+              "id": "B07",
+              "type": "singleSelect",
+              "required": false,
+              "text": { "en": "Religion", "tpi": "Lotu" },
+              "options": [
+                { "value": "catholic", "label": { "en": "Catholic", "tpi": "Katolik" } },
+                { "value": "lutheran", "label": { "en": "Lutheran", "tpi": "Luteran" } },
+                { "value": "sda", "label": { "en": "Seventh-day Adventist", "tpi": "Sevent De Advenist" } },
+                { "value": "united", "label": { "en": "United Church", "tpi": "Yunait Sios" } },
+                { "value": "evangelical", "label": { "en": "Evangelical Alliance", "tpi": "Ivanjelikel Alians" } },
+                { "value": "pentecostal", "label": { "en": "Pentecostal / Charismatic", "tpi": "Pentekostel" } },
+                { "value": "anglican", "label": { "en": "Anglican", "tpi": "Anglikam" } },
+                { "value": "baptist", "label": { "en": "Baptist", "tpi": "Baptis" } },
+                { "value": "islam", "label": { "en": "Islam", "tpi": "Islam" } },
+                { "value": "other_religion", "label": { "en": "Other", "tpi": "Narapela lotu" } },
+                { "value": "no_religion", "label": { "en": "No Religion", "tpi": "Lotu i no gat" } }
+              ]
+            },
+            {
+              "id": "B08",
+              "type": "singleSelect",
+              "required": false,
+              "text": { "en": "Language Usually Spoken at Home", "tpi": "Tok bilong haus" },
+              "options": [
+                { "value": "tok_pisin", "label": { "en": "Tok Pisin", "tpi": "Tok Pisin" } },
+                { "value": "english", "label": { "en": "English", "tpi": "Inglis" } },
+                { "value": "hiri_motu", "label": { "en": "Hiri Motu", "tpi": "Hiri Motu" } },
+                { "value": "enga", "label": { "en": "Enga", "tpi": "Enga" } },
+                { "value": "melpa", "label": { "en": "Melpa", "tpi": "Melpa" } },
+                { "value": "kuman", "label": { "en": "Kuman", "tpi": "Kuman" } },
+                { "value": "hagen", "label": { "en": "Hagen", "tpi": "Hagen" } },
+                { "value": "kuanua", "label": { "en": "Kuanua (Tolai)", "tpi": "Kuanua (Tolai)" } },
+                { "value": "kairiru", "label": { "en": "Kairiru", "tpi": "Kairiru" } },
+                { "value": "other_language", "label": { "en": "Other Local Language", "tpi": "Narapela ples tok" } }
+              ]
+            },
+            {
+              "id": "B09",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Citizenship", "tpi": "Sitisen" },
+              "options": [
+                { "value": "png_citizen", "label": { "en": "PNG Citizen", "tpi": "PNG Sitisen" } },
+                { "value": "non_citizen", "label": { "en": "Non-PNG Citizen", "tpi": "Sitisen bilong narapela kantri" } }
+              ]
+            },
+            {
+              "id": "B10",
+              "type": "text",
+              "required": false,
+              "text": { "en": "Country of Origin (if non-citizen)", "tpi": "Wanem kantri (sapos yu no PNG sitisen)" },
+              "showWhen": [
+                { "questionId": "B09", "operator": "eq", "value": "non_citizen" }
+              ]
+            },
+            {
+              "id": "B11",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Province of Birth", "tpi": "Provins bilong bon bilong yu" },
+              "options": [
+                { "value": "NCD",  "label": { "en": "National Capital District", "tpi": "NCD" } },
+                { "value": "CENTRAL", "label": { "en": "Central", "tpi": "Sentrol" } },
+                { "value": "GULF", "label": { "en": "Gulf", "tpi": "Gulf" } },
+                { "value": "WESTERN", "label": { "en": "Western", "tpi": "Westen" } },
+                { "value": "MILNE_BAY", "label": { "en": "Milne Bay", "tpi": "Miln Be" } },
+                { "value": "ORO", "label": { "en": "Oro (Northern)", "tpi": "Oro" } },
+                { "value": "SOUTHERN_HIGHLANDS", "label": { "en": "Southern Highlands", "tpi": "Sauten Heilans" } },
+                { "value": "HELA", "label": { "en": "Hela", "tpi": "Hela" } },
+                { "value": "ENGA", "label": { "en": "Enga", "tpi": "Enga" } },
+                { "value": "WESTERN_HIGHLANDS", "label": { "en": "Western Highlands", "tpi": "Westen Heilans" } },
+                { "value": "JIWAKA", "label": { "en": "Jiwaka", "tpi": "Jiwaka" } },
+                { "value": "SIMBU", "label": { "en": "Simbu (Chimbu)", "tpi": "Simbu" } },
+                { "value": "EASTERN_HIGHLANDS", "label": { "en": "Eastern Highlands", "tpi": "Isten Heilans" } },
+                { "value": "MOROBE", "label": { "en": "Morobe", "tpi": "Morob" } },
+                { "value": "MADANG", "label": { "en": "Madang", "tpi": "Madang" } },
+                { "value": "EAST_SEPIK", "label": { "en": "East Sepik", "tpi": "Ist Sepik" } },
+                { "value": "WEST_SEPIK", "label": { "en": "West Sepik (Sandaun)", "tpi": "West Sepik" } },
+                { "value": "MANUS", "label": { "en": "Manus", "tpi": "Manus" } },
+                { "value": "EAST_NEW_BRITAIN", "label": { "en": "East New Britain", "tpi": "Ist Niu Briten" } },
+                { "value": "WEST_NEW_BRITAIN", "label": { "en": "West New Britain", "tpi": "West Niu Briten" } },
+                { "value": "NEW_IRELAND", "label": { "en": "New Ireland", "tpi": "Niu Ailan" } },
+                { "value": "AROB", "label": { "en": "Bougainville", "tpi": "Bogenvil" } },
+                { "value": "OVERSEAS", "label": { "en": "Born Overseas", "tpi": "Bon long narapela kantri" } }
+              ]
+            },
+            {
+              "id": "B12",
+              "type": "text",
+              "required": false,
+              "text": { "en": "Country of Birth (if born overseas)", "tpi": "Wanem kantri yu bon long en (sapos yu bon ausait long PNG)" },
+              "showWhen": [
+                { "questionId": "B11", "operator": "eq", "value": "OVERSEAS" }
+              ]
+            },
+            {
+              "id": "B13",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Is this person's usual place of residence this household?", "tpi": "Dispela manmeri i save stap olgeta taim long dispela haus?" },
+              "options": [
+                { "value": "yes", "label": { "en": "Yes, usually resident here", "tpi": "Yes, em i save stap hia" } },
+                { "value": "no", "label": { "en": "No, usually resident elsewhere", "tpi": "Nogat, em i save stap long narapela ples" } },
+                { "value": "visitor", "label": { "en": "Visitor only", "tpi": "Visitman tasol" } }
+              ]
+            },
+            {
+              "id": "B14",
+              "type": "singleSelect",
+              "required": false,
+              "text": { "en": "Province of Usual Residence (if not here)", "tpi": "Provins em i save stap (sapos em i no hia)" },
+              "showWhen": [
+                { "questionId": "B13", "operator": "neq", "value": "yes" }
+              ],
+              "options": [
+                { "value": "NCD",  "label": { "en": "National Capital District", "tpi": "NCD" } },
+                { "value": "CENTRAL", "label": { "en": "Central", "tpi": "Sentrol" } },
+                { "value": "GULF", "label": { "en": "Gulf", "tpi": "Gulf" } },
+                { "value": "WESTERN", "label": { "en": "Western", "tpi": "Westen" } },
+                { "value": "MILNE_BAY", "label": { "en": "Milne Bay", "tpi": "Miln Be" } },
+                { "value": "ORO", "label": { "en": "Oro", "tpi": "Oro" } },
+                { "value": "SOUTHERN_HIGHLANDS", "label": { "en": "Southern Highlands", "tpi": "Sauten Heilans" } },
+                { "value": "HELA", "label": { "en": "Hela", "tpi": "Hela" } },
+                { "value": "ENGA", "label": { "en": "Enga", "tpi": "Enga" } },
+                { "value": "WESTERN_HIGHLANDS", "label": { "en": "Western Highlands", "tpi": "Westen Heilans" } },
+                { "value": "JIWAKA", "label": { "en": "Jiwaka", "tpi": "Jiwaka" } },
+                { "value": "SIMBU", "label": { "en": "Simbu", "tpi": "Simbu" } },
+                { "value": "EASTERN_HIGHLANDS", "label": { "en": "Eastern Highlands", "tpi": "Isten Heilans" } },
+                { "value": "MOROBE", "label": { "en": "Morobe", "tpi": "Morob" } },
+                { "value": "MADANG", "label": { "en": "Madang", "tpi": "Madang" } },
+                { "value": "EAST_SEPIK", "label": { "en": "East Sepik", "tpi": "Ist Sepik" } },
+                { "value": "WEST_SEPIK", "label": { "en": "West Sepik", "tpi": "West Sepik" } },
+                { "value": "MANUS", "label": { "en": "Manus", "tpi": "Manus" } },
+                { "value": "EAST_NEW_BRITAIN", "label": { "en": "East New Britain", "tpi": "Ist Niu Briten" } },
+                { "value": "WEST_NEW_BRITAIN", "label": { "en": "West New Britain", "tpi": "West Niu Briten" } },
+                { "value": "NEW_IRELAND", "label": { "en": "New Ireland", "tpi": "Niu Ailan" } },
+                { "value": "AROB", "label": { "en": "Bougainville", "tpi": "Bogenvil" } },
+                { "value": "OVERSEAS", "label": { "en": "Overseas", "tpi": "Ausait long PNG" } }
+              ]
+            },
+            {
+              "id": "B15",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "School Attendance", "tpi": "Skul" },
+              "showWhen": [
+                { "questionId": "B04", "operator": "gte", "value": 5 }
+              ],
+              "options": [
+                { "value": "currently_attending", "label": { "en": "Currently Attending", "tpi": "I go skul nau" } },
+                { "value": "attended_not_now", "label": { "en": "Attended but Not Now", "tpi": "I bin go skul, tasol i no go nau" } },
+                { "value": "never_attended", "label": { "en": "Never Attended", "tpi": "I no bin go skul" } }
+              ]
+            },
+            {
+              "id": "B16",
+              "type": "singleSelect",
+              "required": false,
+              "text": { "en": "Highest Level of Education Attained", "tpi": "Antap bilong skul em i go inap long wanem" },
+              "showWhen": [
+                { "questionId": "B15", "operator": "neq", "value": "never_attended" }
+              ],
+              "options": [
+                { "value": "elementary", "label": { "en": "Elementary (Prep – Grade 3)", "tpi": "Elementri (Prep – Gret 3)" } },
+                { "value": "primary", "label": { "en": "Primary (Grade 4 – 8)", "tpi": "Praimeri (Gret 4–8)" } },
+                { "value": "secondary", "label": { "en": "Secondary (Grade 9 – 12)", "tpi": "Sekenderi (Gret 9–12)" } },
+                { "value": "vocational", "label": { "en": "Vocational / Technical", "tpi": "Vokesenol / Teknikel" } },
+                { "value": "tertiary", "label": { "en": "Tertiary (College / University)", "tpi": "Kolej / Yunivesiti" } },
+                { "value": "postgraduate", "label": { "en": "Postgraduate", "tpi": "Postgrajiuet" } }
+              ]
+            },
+            {
+              "id": "B17",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Can this person read and write in any language?", "tpi": "Dispela manmeri inap ritim na raitim long wanem kain tok?" },
+              "showWhen": [
+                { "questionId": "B04", "operator": "gte", "value": 10 }
+              ],
+              "options": [
+                { "value": "yes", "label": { "en": "Yes", "tpi": "Yes" } },
+                { "value": "no", "label": { "en": "No", "tpi": "Nogat" } }
+              ]
+            },
+            {
+              "id": "B18",
+              "type": "singleSelect",
+              "required": true,
+              "text": { "en": "Employment Status (last week)", "tpi": "Wok (las wik)" },
+              "showWhen": [
+                { "questionId": "B04", "operator": "gte", "value": 10 }
+              ],
+              "options": [
+                { "value": "paid_employed", "label": { "en": "Paid Employee", "tpi": "Wokman (pe i save kamap)" } },
+                { "value": "self_employed", "label": { "en": "Self Employed / Own Business", "tpi": "Bisnis bilong yet" } },
+                { "value": "subsistence", "label": { "en": "Subsistence Farming / Fishing", "tpi": "Gaden wok / Pissim fis" } },
+                { "value": "unpaid_family", "label": { "en": "Unpaid Family Worker", "tpi": "Helpim famili (pe i no kamap)" } },
+                { "value": "unemployed_looking", "label": { "en": "Unemployed, Looking for Work", "tpi": "Wok i no gat, lukautim wok" } },
+                { "value": "not_in_labour_force", "label": { "en": "Not in Labour Force (student / retired / homemaker)", "tpi": "I no wok (skul / ritaet / haus meri)" } }
+              ]
+            },
+            {
+              "id": "B19",
+              "type": "text",
+              "required": false,
+              "text": { "en": "Occupation (describe main job)", "tpi": "Wanem kain wok (tok klia long wok bilong yu)" },
+              "showWhen": [
+                { "questionId": "B18", "operator": "eq", "value": "paid_employed" }
+              ]
+            },
+            {
+              "id": "B20",
+              "type": "singleSelect",
+              "required": false,
+              "text": { "en": "Industry / Sector of Main Job", "tpi": "Wanem kain bisnis o seken bilong wok" },
+              "showWhen": [
+                { "questionId": "B18", "operator": "eq", "value": "paid_employed" }
+              ],
+              "options": [
+                { "value": "agriculture", "label": { "en": "Agriculture / Forestry / Fishing", "tpi": "Gaden / Diwai / Fissim fis" } },
+                { "value": "mining", "label": { "en": "Mining / Quarrying", "tpi": "Mainining / Digim ston" } },
+                { "value": "manufacturing", "label": { "en": "Manufacturing", "tpi": "Mekim samting long fektori" } },
+                { "value": "construction", "label": { "en": "Construction", "tpi": "Wokim haus / Bildim" } },
+                { "value": "trade", "label": { "en": "Wholesale / Retail Trade", "tpi": "Sel na bai samting" } },
+                { "value": "transport", "label": { "en": "Transport / Storage", "tpi": "Transpo / Stoaim" } },
+                { "value": "finance", "label": { "en": "Finance / Insurance / Real Estate", "tpi": "Fainens / Insures" } },
+                { "value": "public_admin", "label": { "en": "Public Administration / Defence", "tpi": "Gavman / Difens" } },
+                { "value": "education_sector", "label": { "en": "Education", "tpi": "Edukesen" } },
+                { "value": "health_sector", "label": { "en": "Health / Social Work", "tpi": "Helt / Sosol wok" } },
+                { "value": "other_services", "label": { "en": "Other Services", "tpi": "Narapela wok" } }
+              ]
+            },
+            {
+              "id": "B21",
+              "type": "number",
+              "required": false,
+              "text": { "en": "Total children ever born alive (for women aged 12+)", "tpi": "Hamas pikinini yu karim i stap (bilong meri 12 yia i go antap)" },
+              "showWhen": [
+                { "questionId": "B03", "operator": "eq", "value": "female" },
+                { "questionId": "B04", "operator": "gte", "value": 12 }
+              ],
+              "validations": [
+                { "type": "min", "value": 0 },
+                { "type": "max", "value": 25 }
+              ]
+            },
+            {
+              "id": "B22",
+              "type": "number",
+              "required": false,
+              "text": { "en": "Of those, how many are still alive?", "tpi": "Long ol dispela, hamas i stap yet laip?" },
+              "showWhen": [
+                { "questionId": "B03", "operator": "eq", "value": "female" },
+                { "questionId": "B04", "operator": "gte", "value": 12 },
+                { "questionId": "B21", "operator": "gt", "value": 0 }
+              ],
+              "validations": [
+                { "type": "min", "value": 0 },
+                { "type": "max", "value": 25 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "en": "Section C: Housing Characteristics",
+        "tpi": "Seksion C: Ol Samting bilong Haus"
+      },
+      "questions": [
+        {
+          "id": "C01",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Type of Dwelling", "tpi": "Wanem kain haus" },
+          "options": [
+            { "value": "permanent_formal", "label": { "en": "Permanent Formal (concrete / brick)", "tpi": "Strongpela haus (simen / brik)" } },
+            { "value": "permanent_informal", "label": { "en": "Permanent Informal (wood / iron)", "tpi": "Strongpela haus (diwai / ain)" } },
+            { "value": "semi_permanent", "label": { "en": "Semi-Permanent (mixed)", "tpi": "Hap-hap strongpela haus" } },
+            { "value": "traditional", "label": { "en": "Traditional / Bush Materials", "tpi": "Haus bilong ples (gras / limbum)" } },
+            { "value": "temporary", "label": { "en": "Temporary (makeshift)", "tpi": "Tempre haus" } }
+          ]
+        },
+        {
+          "id": "C02",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Tenure of Dwelling", "tpi": "Olsem wanem yu stap long dispela haus" },
+          "options": [
+            { "value": "owner_occupied", "label": { "en": "Owner-Occupied (own outright)", "tpi": "Nambawan haus bilong em yet" } },
+            { "value": "owner_mortgage", "label": { "en": "Owner with Mortgage / Loan", "tpi": "Haus bilong em yet, tasol loun i stap" } },
+            { "value": "renting", "label": { "en": "Renting (paying rent)", "tpi": "Ren haus" } },
+            { "value": "employer_provided", "label": { "en": "Provided by Employer", "tpi": "Kompen i givim haus" } },
+            { "value": "customary_land", "label": { "en": "Customary Land / No Formal Tenure", "tpi": "Kastom graun" } },
+            { "value": "other_tenure", "label": { "en": "Other", "tpi": "Narapela kain" } }
+          ]
+        },
+        {
+          "id": "C03",
+          "type": "number",
+          "required": true,
+          "text": { "en": "Number of rooms used for sleeping", "tpi": "Hamas rum i gat bilong slip" },
+          "validations": [
+            { "type": "min", "value": 1 },
+            { "type": "max", "value": 50 }
+          ]
+        },
+        {
+          "id": "C04",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main material of floor", "tpi": "Wanem samting i wokim flo bilong haus" },
+          "options": [
+            { "value": "earth_sand", "label": { "en": "Earth / Sand / Mud", "tpi": "Giraun / Sen / Ropa" } },
+            { "value": "wood_bamboo", "label": { "en": "Wood / Bamboo / Palm", "tpi": "Diwai / Bambu / Palm" } },
+            { "value": "cement", "label": { "en": "Cement / Concrete", "tpi": "Simen / Konkrit" } },
+            { "value": "tiles", "label": { "en": "Ceramic / Vinyl Tiles", "tpi": "Tael" } },
+            { "value": "other_floor", "label": { "en": "Other", "tpi": "Narapela" } }
+          ]
+        },
+        {
+          "id": "C05",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main material of outer walls", "tpi": "Wanem samting i wokim banis bilong haus" },
+          "options": [
+            { "value": "no_walls", "label": { "en": "No Walls / Open", "tpi": "Banis i no gat" } },
+            { "value": "bush_bamboo", "label": { "en": "Bush Timber / Bamboo", "tpi": "Diwai bilong ples / Bambu" } },
+            { "value": "iron_metal", "label": { "en": "Iron / Metal Sheets", "tpi": "Ain / Siet" } },
+            { "value": "wood_planks", "label": { "en": "Wood Planks / Sawn Timber", "tpi": "Diwai plan" } },
+            { "value": "brick_block", "label": { "en": "Brick / Concrete Block", "tpi": "Brik / Blok simen" } },
+            { "value": "other_walls", "label": { "en": "Other", "tpi": "Narapela" } }
+          ]
+        },
+        {
+          "id": "C06",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main material of roof", "tpi": "Wanem samting i wokim rup bilong haus" },
+          "options": [
+            { "value": "thatch_sago", "label": { "en": "Thatch / Sago Leaf / Kunai", "tpi": "Saksak / Kunai / Gras" } },
+            { "value": "iron_zinc", "label": { "en": "Iron / Zinc / Corrugated Metal", "tpi": "Ain / Sink" } },
+            { "value": "tiles_concrete", "label": { "en": "Tiles / Concrete / Asbestos", "tpi": "Tael / Konkrit" } },
+            { "value": "other_roof", "label": { "en": "Other", "tpi": "Narapela" } }
+          ]
+        },
+        {
+          "id": "C07",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main source of drinking water", "tpi": "Wanem hap wara bilong dringim i kamap long" },
+          "options": [
+            { "value": "piped_dwelling", "label": { "en": "Piped – inside dwelling", "tpi": "Paipu wara – insait long haus" } },
+            { "value": "piped_yard", "label": { "en": "Piped – in yard / plot", "tpi": "Paipu wara – ausait long haus" } },
+            { "value": "piped_public", "label": { "en": "Public standpipe / communal tap", "tpi": "Pablik wara tap" } },
+            { "value": "rainwater", "label": { "en": "Rainwater tank / collection", "tpi": "Ren wara" } },
+            { "value": "bore_pump", "label": { "en": "Borehole / Pump / Hand pump", "tpi": "Bon wara / Pam" } },
+            { "value": "open_well", "label": { "en": "Open well (protected)", "tpi": "Wel wara (i karamapim)" } },
+            { "value": "river_stream", "label": { "en": "River / Stream / Spring (unprotected)", "tpi": "Reva / Wara bilong bus" } },
+            { "value": "other_water", "label": { "en": "Other", "tpi": "Narapela" } }
+          ]
+        },
+        {
+          "id": "C08",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main toilet / sanitation facility", "tpi": "Wanem kain haus pekpek" },
+          "options": [
+            { "value": "flush_sewerage", "label": { "en": "Flush toilet – connected to sewerage", "tpi": "Flas toile – suro" } },
+            { "value": "flush_septic", "label": { "en": "Flush toilet – septic tank", "tpi": "Flas toile – septik" } },
+            { "value": "ventilated_pit", "label": { "en": "Ventilated improved pit latrine (VIP)", "tpi": "VIP haus pekpek" } },
+            { "value": "pit_latrine", "label": { "en": "Pit latrine / Long drop", "tpi": "Haus pekpek (hol)" } },
+            { "value": "composting", "label": { "en": "Composting toilet", "tpi": "Kompostin toile" } },
+            { "value": "no_facility", "label": { "en": "No facility – bush / river", "tpi": "I no gat haus pekpek – bus" } }
+          ]
+        },
+        {
+          "id": "C09",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main source of cooking fuel", "tpi": "Wanem samting bilong kukim kaikai" },
+          "options": [
+            { "value": "firewood", "label": { "en": "Firewood", "tpi": "Paiawut" } },
+            { "value": "charcoal", "label": { "en": "Charcoal", "tpi": "Siakoal" } },
+            { "value": "kerosene", "label": { "en": "Kerosene / Parafin", "tpi": "Kerosin" } },
+            { "value": "lpg", "label": { "en": "LPG / Bottled Gas", "tpi": "LPG / Gas" } },
+            { "value": "electricity", "label": { "en": "Electricity", "tpi": "Elektrisiti" } },
+            { "value": "solar", "label": { "en": "Solar Cooker", "tpi": "Sol kuka" } },
+            { "value": "no_cooking", "label": { "en": "No Cooking / Eats Out", "tpi": "I no kukim kaikai long haus" } }
+          ]
+        },
+        {
+          "id": "C10",
+          "type": "singleSelect",
+          "required": true,
+          "text": { "en": "Main source of lighting", "tpi": "Wanem kain lait i stap long haus" },
+          "options": [
+            { "value": "electricity_grid", "label": { "en": "Electricity – mains grid (PPL)", "tpi": "Elektrisiti – lain bilong PPL" } },
+            { "value": "solar_panel", "label": { "en": "Solar panel / SHS", "tpi": "Sol panel" } },
+            { "value": "generator", "label": { "en": "Generator", "tpi": "Jenereta" } },
+            { "value": "kerosene_lamp", "label": { "en": "Kerosene / Hurricane lamp", "tpi": "Lamp kerosin" } },
+            { "value": "candle", "label": { "en": "Candle", "tpi": "Kandol" } },
+            { "value": "battery_torch", "label": { "en": "Battery / Torch", "tpi": "Betri / Tos" } },
+            { "value": "no_lighting", "label": { "en": "No lighting", "tpi": "Lait i no gat" } }
+          ]
+        }
+      ]
+    }
+  ]
+}
